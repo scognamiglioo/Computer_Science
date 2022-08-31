@@ -3,3 +3,5 @@
 {!!} fazendo pela segunda vez porque gosto muito dessa matéria! 
 
 - 2022/1 - 2022/2
+
+📌 [repertório da matéria](https://github.com/icei-pucminas/aeds2)
