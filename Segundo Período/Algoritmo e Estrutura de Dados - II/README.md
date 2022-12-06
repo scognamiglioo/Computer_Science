@@ -4,4 +4,4 @@
 
 - 2022/1 - 2022/2
 
-📌 [repertório da matéria](https://github.com/icei-pucminas/aeds2)
+📌 [repositório da matéria](https://github.com/icei-pucminas/aeds2)
