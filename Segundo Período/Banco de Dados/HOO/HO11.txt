@@ -1,0 +1,118 @@
+Bloco de disco = 2 KB
+t = 2 * 1024 = 2048 B
+
+. Fator de bloco => F = ⌊ t / r ⌋
+. Número de blocos => B = ⌈ n / F ⌉
+. Espaço disperdiçado por bloco => U = t - (F * r)
+. Espaço total gasto => E = B * t(em KB)
+
+---------------------------------------------------------------------------------------------------------------
+
+Atores (10.000 registros) → Codigo (16B), Nome (160B)
+
+registro:
+r = 16 + 160  
+quantidade de resgistro:
+n = 10000
+
+. Fator de bloco => F = 2048 / 176 = 11 bytes
+. Número de blocos => B = 10000 / 11 = 910 bytes
+. Espaço disperdiçado por bloco => U = 2048 - (11 * 176) = 112 bytes
+. Espaço total gasto => E = 910 * 2048 = 1863680 = 1820 kb
+
+---------------------------------------------------------------------------------------------------------------
+Clientes (100.000 registros) → CPF (11B), Nome (160B), Endereco (200B), Telefone (16B), DataNascimento (12B), Sexo (1B)
+
+registro:
+r = 11 + 160 + 200 + 16 + 1 = 400
+
+quantidade de resgistro:
+n = 100000
+
+. Fator de bloco => F = 2048 / 400 = 5
+. Número de blocos => B = 100000 / 5 = 20000 bytes
+. Espaço disperdiçado por bloco => U = 2048 - (5 * 400) = 48 bytes
+. Espaço total gasto => E = 20000 * 2048 = 40960000 / 1024 = 4000
+---------------------------------------------------------------------------------------------------------------
+Filmes (2.000.000 registros) → Codigo (16B), Nome (160B), Genero (80B)
+
+registro:
+r = 16 + 160 + 80 = 256
+
+quantidade de resgistro:
+n = 2000000
+
+
+. Fator de bloco => F = 2048 / 256 = 8
+. Número de blocos => B = 2.000.000 / 8 = 250000
+. Espaço disperdiçado por bloco => U = 2048 - (8 * 256) = 0
+. Espaço total gasto => E = 250000 * 2048 = 512000000 / 1024 = 500000
+---------------------------------------------------------------------------------------------------------------
+Funcionarios (3.500 registros) → CPF (11B), Nome (160B)
+registro:
+r = 11 + 160 = 171
+
+quantidade de resgistro:
+n = 3500 
+
+. Fator de bloco => F = 2048 / 171 = 11
+. Número de blocos => B = 3500 / 11 = 319
+. Espaço disperdiçado por bloco => U = 2048 - (11 * 171) = 46 
+. Espaço total gasto => E = 319 * 2048 = 653.312 / 1024 = 638
+---------------------------------------------------------------------------------------------------------------
+Midias (10.000.000 registros) → Identificador (24B), Tipo (8B), PrecoDiaria (24B)
+
+registro:
+r = 24 + 8 + 24 + 16 = 72
+
+quantidade de resgistro:
+n = 10000000
+
+. Fator de bloco => F = 2048 / 72 = 28
+. Número de blocos => B = 10000000 / 28 = 357142
+. Espaço disperdiçado por bloco => U = 2048 - (28 * 72) = 32
+. Espaço total gasto => E = 357142 * 2048 = 731428864 / 1024 = 714286
+
+---------------------------------------------------------------------------------------------------------------
+Aluguel (20.000.000 registros)  → DataLocacao (12B), DataDevolucao (10B), ValorPagar (24B)
+
+registro:
+r = 12 + 10 + 24 + 11 + 24 + 11 = 92
+
+quantidade de resgistro:
+n = 20000000
+
+
+. Fator de bloco => F = 2048 / 92 = 22
+. Número de blocos => B = 2000000 / 22 = 909090
+. Espaço disperdiçado por bloco => U = 2048 - (22 * 92) = 24
+. Espaço total gasto => E = 909090 * 2048 = 1861816320 / 1024 = 1.776.542
+
+---------------------------------------------------------------------------------------------------------------
+Pagamentos (50.000.000 registros) → Codigo (48B), Data (12B), Valor (24B)
+
+registro:
+r = 48 + 12 + 24 + 11 + 24 + 12 = 131
+
+quantidade de resgistro:
+n = 50000000
+
+
+. Fator de bloco => F = 2048 / 131 = 15
+. Número de blocos => B = 50000000 / 15 = 3333334 
+. Espaço disperdiçado por bloco => U = 2048 - (15 * 131) = 83
+. Espaço total gasto => E = 3333334 * 2048 = 6826668032 / 1024 = 6.666.668
+
+---------------------------------------------------------------------------------------------------------------
+AtoresEmFilmes (1.000.000 registros)
+
+registro:
+r = 16 + 16 = 32
+
+quantidade de resgistro:
+n = 1000000 
+
+. Fator de bloco => F = 2048 / 32 = 64
+. Número de blocos => B = 1000000 / 64 = 15625
+. Espaço disperdiçado por bloco => U = 2048 - (64 * 32) = 0
+. Espaço total gasto => E = 2048 * 15625 = 32000000 / 1024 = 31250

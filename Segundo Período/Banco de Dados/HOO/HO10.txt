@@ -1,0 +1,176 @@
+Fator de bloco: F = ⌊ t/r ⌋
+Fator com índice: Fi = ⌊ t/cp + pb ⌋
+
+Nº de blocos: B = ⌈ n/F ⌉
+Blocos com índice: Bi = ⌈ B/Fi ⌉ 
+
+Espaço desperdiçado: U = t - (F*r)
+
+Espaço total gasto: S = B*t 
+Espaço gasto com índice: Si = Bi*t 
+
+Acessos pela chave primária: Acp = ⌈ log B ⌉
+Acessos por outro campo: Aoc = B
+
+Acessos pelo índice: Ai = ⌈ log Bi ⌉
++ 1 acesso para recuperar o registro no arquivo
+
+---------------------------------------------------------------------------------------------------------------
+
+Atores (10.000 registros) → Codigo (16B), Nome (160B)
+
+registro:
+r = 16 + 160  
+quantidade de resgistro:
+n = 10000
+
+. Fator de bloco => 11 
+. Fator com indice => 64
+. Número de blocos => 910 
+. Blocos com indice => 15
+. Espaço disperdiçado por bloco => 112 
+. Espaço total gasto => 1820 
+. Gasto com indice => 30720 
+. Chave primária => 10
+. Outro campo => 910
+. Pelo indice => 4 + acesso de recuperação
+---------------------------------------------------------------------------------------------------------------
+Clientes (100.000 registros) → CPF (11B), Nome (160B), Endereco (200B), Telefone (16B), DataNascimento (12B), Sexo (1B)
+
+registro:
+r = 11 + 160 + 200 + 16 + 1 = 400
+
+quantidade de resgistro:
+n = 100000
+
+. Fator de bloco => 5 
+. Fator com indice => 75
+. Número de blocos => 20000
+. Blocos com indice => 267
+. Espaço disperdiçado por bloco => 48
+. Espaço total gasto => 4000
+. Gasto com indice => 546816 
+. Chave primária => 15
+. Outro campo => 2000
+. Pelo indice => 9 + acesso de recuperação
+---------------------------------------------------------------------------------------------------------------
+Filmes (2.000.000 registros) → Codigo (16B), Nome (160B), Genero (80B)
+
+registro:
+r = 16 + 160 + 80 = 256
+
+quantidade de resgistro:
+n = 2000000
+
+. Fator de bloco => 8
+. Fator com indice => 64
+. Número de blocos => 250000
+. Blocos com indice => 3907
+. Espaço disperdiçado por bloco => 0
+. Espaço total gasto => 512000000 
+. Gasto com indice => 8001536
+. Chave primária => 18
+. Outro campo => 250000
+. Pelo indice => 12 + acesso de recuperação
+---------------------------------------------------------------------------------------------------------------
+Funcionarios (3.500 registros) → CPF (11B), Nome (160B)
+registro:
+r = 11 + 160 = 171
+
+quantidade de resgistro:
+n = 3500 
+
+. Fator de bloco => 11
+. Fator com indice => 75
+. Número de blocos => 319
+. Blocos com indice => 5
+. Espaço disperdiçado por bloco => 46
+. Espaço total gasto => 653312 
+. Gasto com indice => 10240
+. Chave primária => 9
+. Outro campo => 319
+. Pelo indice => 3 + acesso de recuperação
+---------------------------------------------------------------------------------------------------------------
+Midias (10.000.000 registros) → Identificador (24B), Tipo (8B), PrecoDiaria (24B)
+
+registro:
+r = 24 + 8 + 24 + 16 = 72
+
+quantidade de resgistro:
+n = 10000000
+
+. Fator de bloco => 28
+. Fator com indice => 51
+. Número de blocos => 357142
+. Blocos com indice => 7003
+. Espaço disperdiçado por bloco => 32
+. Espaço total gasto => 714286
+. Gasto com indice => 14342144 
+. Chave primária => 19
+. Outro campo => 357143
+. Pelo indice => 13 + acesso de recuperação
+---------------------------------------------------------------------------------------------------------------
+Aluguel (20.000.000 registros)  → DataLocacao (12B), DataDevolucao (10B), ValorPagar (24B)
+
+registro:
+r = 12 + 10 + 24 + 11 + 24 + 11 = 92
+
+quantidade de resgistro:
+n = 20000000
+
+. Fator de bloco => 22
+. Fator com indice => 51
+. Número de blocos => 909090
+. Blocos com indice => 12454
+. Espaço disperdiçado por bloco => 24
+. Espaço total gasto => 1861816320 
+. Gasto com indice => 25505792
+. Chave primária => 20
+. Outro campo => 909090
+. Pelo indice => 14 + acesso de recuperação
+
+---------------------------------------------------------------------------------------------------------------
+Pagamentos (50.000.000 registros) → Codigo (48B), Data (12B), Valor (24B)
+
+registro:
+r = 48 + 12 + 24 + 11 + 24 + 12 = 131
+
+quantidade de resgistro:
+n = 50000000
+
+. Fator de bloco => 15
+. Fator com indice => 32
+. Número de blocos => 3333334 
+. Blocos com indice => 104167
+. Espaço disperdiçado por bloco => 83
+. Espaço total gasto => 6826668032 
+. Gasto com indice => 213334016 
+. Chave primária => 22
+. Outro campo => 3333334
+. Pelo indice => 17 + acesso de recuperação
+
+
+---------------------------------------------------------------------------------------------------------------
+AtoresEmFilmes (1.000.000 registros)
+
+registro:
+r = 16 + 16 = 32
+
+quantidade de resgistro:
+n = 1000000 
+
+. Fator de bloco => F = 2048 / 32 = 64
+. Número de blocos => B = 1000000 / 64 = 15625
+. Espaço disperdiçado por bloco => U = 2048 - (64 * 32) = 0
+. Espaço total gasto => E = 2048 * 15625 = 32000000 / 1024 = 31250
+
+. Fator de bloco => 64
+. Fator com indice => 64
+. Número de blocos => 15625
+. Blocos com indice => 15625
+. Espaço disperdiçado por bloco => 0
+. Espaço total gasto => 32000000 
+. Gasto com indice => 32000000 
+. Chave secundária => 16
+. Outro campo => 16
+. Pelo indice => 14 + acesso de recuperação

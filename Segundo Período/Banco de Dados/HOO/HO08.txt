@@ -1,0 +1,46 @@
+1)
+select distinct  actors.first_name, actors.last_name
+from actors
+INNER JOIN directors
+ON directors.first_name = actors.first_name AND directors.last_name = actors.last_name
+
+2)
+select distinct first_name, last_name
+from actors
+EXCEPT  
+select distinct first_name, last_name 
+from directors
+
+3)
+select distinct first_name, last_name
+from actors
+UNION
+select distinct first_name, last_name 
+from directors
+
+4)
+select distinct name
+from movies
+EXCEPT
+select distinct name
+from movies
+INNER JOIN movies_directors
+ON movies.id = movies_directors.movie_id
+
+5)
+select distinct actors.first_name, actors.last_name, COUNT(roles.actor_id) as qtd
+FROM actors
+INNER JOIN roles
+ON actors.id = roles.actor_id
+group by actors.first_name, actors.last_name
+having qtd < 2
+
+6)
+select distinct movies_genres.genre, movies.year, COUNT(roles.movie_id) AS qtd
+from roles
+INNER JOIN movies_genres
+ON roles.movie_id = movies_genres.movie_id
+INNER JOIN movies 
+ON movies.id = roles.movie_id
+group by roles.movie_id, movies_genres.genre, movies.year
+having qtd < 2

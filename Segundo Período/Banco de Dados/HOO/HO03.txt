@@ -1,0 +1,118 @@
+1.
+
+-- o pi projeta 
+π first_name, last_name
+(
+     -- o sigma seleciona 
+    σ gender = 'F' (actors) -- precisa identificar da onde vem o atributo
+)
+
+
+
+2. 
+
+-- o pi projeta 
+π name
+
+(
+     -- o sigma seleciona 
+    σ year ≥ 1999 (movies) -- precisa identificar da onde vem o atributo
+)
+
+
+
+
+
+3. 
+
+-- o pi projeta 
+π name, first_name, last_name -- movie, diretor 
+
+(
+     -- o  ⨝ combina tuplas (relaçoes) 
+    movies ⨝ movie_id = movies_directors.movie_id movies_directors ⨝ movies_directors.director_id = director_id (directors) 
+    -- precisa identificar da onde vem o atributo
+)
+
+
+
+
+
+4. 
+
+-- o pi projeta 
+π movies.name, actors.first_name, actors.last_name, roles,role -- movie, diretor 
+
+(
+     (
+     -- o sigma seleciona 
+    σ movies.rank ≥ 6 (movies) 
+
+        )    
+     -- o  ⨝ combina tuplas (relaçoes) 
+    ⨝ movies.id = roles.movie_id roles ⨝ roles.actors_id = actors.id (actos)
+    -- precisa identificar da onde vem o atributo
+)
+
+
+5.
+
+-- pi projeta
+π first_name,last_name,num_movies
+(
+        -- Renomeando movie_id para n_movies
+    ρ num_movies ← movie_id 
+    (
+        (
+            -- agrupa o diretor com quantidades de filmes 
+            γ director_id;count(movie_id) -> movie_id (movies_directors)
+        )
+        
+        -- combina tuplas 
+        ⨝ director_id = id (directors) -- precisa identificar da onde vem o atributo
+    )
+)
+
+
+
+
+
+6. 
+
+-- pi projeta
+π genre, num_movies
+(
+        -- Renomeando movie_id para n_movies
+    ρ num_movies ← movie_id 
+    (
+        
+            -- agrupa 
+            γ genre;count(movies_genres.movie_id) -> movie_id (movies_genres)
+        
+
+    )
+)
+
+
+
+
+7.
+
+-- combinar tuplas, generos com os filmes, A pre definido
+A = (movies_genres) ⨝ movie_id=id (movies) 
+-- pi projeta 
+π genre, rank_med, rank_max, rank_min
+(
+    -- combinar as tuplas dos ranks 
+    (
+        γ genre;avg(rank) -> rank_med (A) -- AVG para variavel numero 
+    )
+    ⨝
+    (
+        γ genre;max(rank)-> rank_max (A) -- -> definindo como/passa a ser
+    )
+    ⨝
+    (
+        γ genre;min(rank)-> rank_min (A)
+    )
+)
