@@ -1,0 +1,1 @@
+a primeira ignora os termos quando o resultado for nulo

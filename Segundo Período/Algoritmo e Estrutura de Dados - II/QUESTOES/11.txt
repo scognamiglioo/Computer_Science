@@ -1,0 +1,2 @@
+O primeiro termo de A quando i = 1, sera a1
+e ja no outro, sera a0

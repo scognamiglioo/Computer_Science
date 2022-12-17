@@ -1,0 +1,1 @@
+O valor de i = 0 nao obtem resultado então nao altera o resultado no final da soma

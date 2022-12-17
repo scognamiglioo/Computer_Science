@@ -1,0 +1,6 @@
+é igual pois quando se faz as operaçoes por meio da logica
+o valor de i, consiste exatamente no valor de 4 - 1 ate que
+ela seja zerada 
+
+(3 + 2i) 3 + 2 * 0 + 3 + 2 * 1 + 3 + 2 * 2 + 3 + 2 * 3 + 3 + 2 * 4 = 50
+(3 + 2 (4-i)) (3 + 2 (4-0)) + (3 + 2 (4-1)) + (3 + 2 (4-2)) + (3 + 2 (4-3)) + (3 + 2 (4-4)) = 50
