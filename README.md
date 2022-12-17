@@ -4,4 +4,5 @@
 # períodos 🖥️. . . 
 - [primeiro](https://github.com/scognamiglioo) - 🔋 100% 
 - [segundo](https://github.com/scognamiglioo) - 🔋 100% 
-- [terceiro](https://github.com/scognamiglioo) - 🔋 charging 
+- [terceiro](https://github.com/scognamiglioo) - 🔋 100%
+- [quarto](https://github.com/scognamiglioo) - 🔋 charging
