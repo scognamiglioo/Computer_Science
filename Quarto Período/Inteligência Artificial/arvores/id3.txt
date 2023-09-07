@@ -1,0 +1,18 @@
+[1.35164412 0.81127812 0.         0.         0.        ]
+[0.26676257 0.         0.         0.         0.         0.
+ 0.         0.         0.73323743 0.        ]
+['Baixo' 'Baixo' 'Alto' 'Alto' 'Moderado']
+Acurácia:  0.2
+Matriz de Confusão:  [[1 1 1]
+ [0 0 0]
+ [1 1 0]]
+              precision    recall  f1-score   support
+
+        Alto       0.50      0.33      0.40         3
+       Baixo       0.00      0.00      0.00         0
+    Moderado       0.00      0.00      0.00         2
+
+    accuracy                           0.20         5
+   macro avg       0.17      0.11      0.13         5
+weighted avg       0.30      0.20      0.24         5
+
